@@ -13,12 +13,13 @@ using std::setprecision;
 class Person
 {
 public: 
-    string firstName; 
-    string lastName; 
+    string firstName = "first name TBD";
+    string lastName = "last name TBD";
     int age = 11;
 
     void print() const
     {
+        //firstName = "adsfasfasdf";
         cout << "first name: " << firstName << "\n";
         cout << "last name: " << lastName << "\n";
         cout << "age: " << age << "\n";
@@ -27,15 +28,13 @@ public:
     /*Our implementation of a default Person constructor*/
     Person()
     {
-        firstName = "first name TBD";
-        lastName = "last name TBD";
+        //firstName;
+        //lastName ;
     }
 };
-class A
-{
 
-};
 
+//: means "inherits member variables and member functions from" 
 class Employee : public Person//, A //; NO! (Maybe multiple inheritance isn't such a good idea (hard to understand) 
 {
 public: 
@@ -53,11 +52,19 @@ public:
     void print() const // override -> we will talk about this more when we get to "abstract" classes 
     {
         //jobTitle = "adsfasdf";
+       
         Person::print(); //this will print the first three attributes of an Employee 
 
         cout << "Job title: " << jobTitle << "\n";
         cout << "Salary: $" << std::fixed << setprecision(2) << salary << "\n";
+
+        //print(); //NO! -> this will lead to "infinite recursion"!
     }
+};
+
+class RetiredPerson : public Person
+{
+    double pension; 
 };
 
 class Manager : public Employee // a manager "is-a(n)" Employee
@@ -90,8 +97,16 @@ class Dog //: public Tail //No! A dog is not a tail -> a dog is COMPOSED of a ta
     Tail tailObject; //this says that a Dog "has-a" tail
 };
 
+
+
+class Car
+{
+public: 
+
+};
 int main()
 {
+   
     Person you; 
    
     cout << "Person object attributes:\n";
@@ -101,7 +116,4 @@ int main()
     cout << "\n\n\nEmployee object attributes (using the default constructor): \n";
     alsoYou.print(); //this function OVERRODE its parent!
 
-
-
-    //std::cout << "Hello World!\n";
 }
