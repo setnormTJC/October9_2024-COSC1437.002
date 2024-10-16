@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b55eec10-967e-4df6-a9b2-265d7d096db0}</ProjectGuid>
-    <RootNamespace>October14continuinginheritancestuff</RootNamespace>
+    <ProjectGuid>{afb30cea-38bb-43c9-a03f-f814ef96e601}</ProjectGuid>
+    <RootNamespace>October16composition</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,8 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Desktop\testingG++\Donut.cpp" />
-    <ClCompile Include="October14-continuing inheritance stuff.cpp" />
+    <ClCompile Include="October16-composition.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

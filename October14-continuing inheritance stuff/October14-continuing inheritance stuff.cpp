@@ -28,17 +28,11 @@ using std::cout;
 
 class Rectangle
 {
+    //private: 
+protected: 
+
     int x, y; //x is length, y is width
 
-    //void setX(int clientSpecifiedX)
-    //{
-    //    x = clientSpecifiedX; 
-    //}
-
-    //void setY(int clientSpecifiedY)
-    //{
-    //    y = clientSpecifiedY;
-    //}
 public: 
     void setDimensions(int clientX, int clientY)
     {
@@ -70,11 +64,8 @@ class Box : public Rectangle
     int z{}; //height 
 
 public: 
-    void setDimensions(int length, int width, int height)
-    {
-        Rectangle::setDimensions(length, width); 
-        Box::z = height; 
-    }
+    void setDimensions(int length, int width, int height);
+
 
     /*This print function will override any "print" function defined inside of Rectangle (the parent) */
     void print()// override //we will discuss override keyword when we get to "abstract" classes
@@ -87,10 +78,21 @@ public:
     {
 
     }
-};
+}; //end of Box class def:
+
+void Box::setDimensions(int length, int width, int height)
+{
+    //Rectangle::setDimensions(length, width);
+    Rectangle::x = length;
+    Rectangle::y = width; 
+    //protected 
+    
+    Box::z = height;
+}
 
 int main()
 {
+
     //cout << MySpace::a << 
     Rectangle theGoldenRectangle{ 10, 22 };
     theGoldenRectangle.setDimensions(1222, 5849);
@@ -99,11 +101,11 @@ int main()
     cout << "\n\n\n";
 
     Box thisRoom; 
-    //thisRoom.setDimensions()
+    //thisRoom.setDimensions() NOT endline 
     thisRoom.setDimensions(10, 20, 30); 
     thisRoom.print();
     //thisRoom.setDimensions(30, 20, 10);
-    
+    //cout << endl 
     //std::cout << "Hello World!\n";
 }
 
